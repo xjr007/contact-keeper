@@ -30,11 +30,12 @@ export default (state, action) => {
 		case REGISTER_FAIL:
 		case AUTH_ERROR:
 		case LOGIN_FAIL:
+		case LOGOUT:
 			localStorage.removeItem('token');
 			return {
 				...state,
 				token: null,
-				isAthenticated: false,
+				isAuthenticated: false,
 				loading: false,
 				user: null,
 				error: action.payload,
